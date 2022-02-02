@@ -49,8 +49,7 @@ const hamdanSlider = (sliderOptions) => {
         // nextArrow event listener
         nextArrow.addEventListener("click", () => {
             counter = counter < itemsPerSlide ? counter + 1 : 0;
-            slider.style.transition = "transform 0.4s ease-in-out";
-            slider.style.transform = `translateX(-${counter * 100}%)`;
+            slider.style.transform = `translateX(-${counter * items}px)`;
         });
 
 
@@ -58,8 +57,7 @@ const hamdanSlider = (sliderOptions) => {
         // prevArrow event listener
         prevArrow.addEventListener("click", () => {
             counter = counter > 0 ? counter - 1 : itemsPerSlide - 1;
-            slider.style.transition = "transform 0.4s ease-in-out";
-            slider.style.transform = `translateX(-${counter * 100}%)`;
+            slider.style.transform = `translateX(-${counter * items}px)`;
         });
     }
 
@@ -69,8 +67,7 @@ const hamdanSlider = (sliderOptions) => {
     if (autoplay === true) {
         setInterval(() => {
             counter = counter < itemsPerSlide ? counter + 1 : 0;
-            slider.style.transition = "transform 0.4s ease-in-out";
-            slider.style.transform = `translateX(-${counter * 100}%)`;
+            slider.style.transform = `translateX(-${counter * items}px)`;
         }, interval);
     }
 }
