@@ -63,28 +63,6 @@ const hamdanSlider = (sliderOptions) => {
 
 
 
-    if (dots) {
-        // Create dots and append to container as div
-        div.innerHTML = `
-            <div class="dots">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-          `;
-        container.appendChild(div);
-
-        const dots = document.querySelectorAll(".dot");
-
-        // dots event listener
-        dots.forEach((dot, index) => {
-            dot.addEventListener("click", () => {
-                slider.style.transform = `translateX(-${index * items}px)`;
-                counter = index;
-            });
-        });
-    }
-
 
 
     // Autoplay
