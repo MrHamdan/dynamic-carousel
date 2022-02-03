@@ -9,6 +9,9 @@ body{
 h1{
   text-align: center;
   color: white;
+  font-size: 50px;
+  margin-top: 50px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .slider {
@@ -57,11 +60,21 @@ margin-top: 30px;
 .fa-arrow-alt-circle-left{
   font-size: 40px;
   cursor: pointer;
+  color:#1e1e26;
+}
+
+.fa-arrow-alt-circle-left:hover{
+  color: gainsboro;
 }
 
 .fa-arrow-alt-circle-right{
   font-size: 40px;
   cursor: pointer;
+  color:#1e1e26;
+}
+
+.fa-arrow-alt-circle-right:hover{
+  color: gainsboro;
 }
 
 .radios ul {
