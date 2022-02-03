@@ -49,7 +49,6 @@ const hamdanSlider = (sliderOptions) => {
         dotsClick.forEach((dot, index) => {
             dot.addEventListener("click", () => {
                 counter = index;
-
                 document.querySelector(".dots .active").classList.remove("active");
                 dot.classList.add("active");
                 slider.style.left = -slider.offsetWidth * counter + "px";
