@@ -6,6 +6,8 @@ const span = document.createElement("span");
 
 // hamdanSlider Functions
 const hamdanSlider = (sliderOptions) => {
+
+    // sliderOptions
     interval = sliderOptions.interval || 3000;
     autoplay = sliderOptions.autoplay || false;
     navigations = sliderOptions.navigations || false;
