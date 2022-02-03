@@ -57,7 +57,7 @@ const hamdanSlider = (sliderOptions) => {
                 counter = index;
                 document.querySelector(".dots .active").classList.remove("active");
                 dot.classList.add("active");
-                slider.style.transform = `translateX(-${index * items}px)`;
+                slider.style.left = -slider.offsetWidth * counter + "px";
             });
         });
 
