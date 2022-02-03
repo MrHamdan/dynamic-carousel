@@ -87,6 +87,7 @@ const hamdanSlider = (sliderOptions) => {
             document.querySelector(".dots .active").classList.remove("active");
             document.querySelector(".dots li:nth-child(" + (counter + 1) + ")").classList.add("active");
             slider.style.transform = `translateX(-${counter * items}px)`;
+            resetInterval();
         });
 
 
@@ -97,6 +98,7 @@ const hamdanSlider = (sliderOptions) => {
             document.querySelector(".dots .active").classList.remove("active");
             document.querySelector(".dots li:nth-child(" + (counter + 1) + ")").classList.add("active");
             slider.style.transform = `translateX(-${counter * items}px)`;
+            resetInterval();
         });
     }
 
@@ -111,13 +113,23 @@ const hamdanSlider = (sliderOptions) => {
         navigationArrows();
     }
 
-    // Autoplay
-    if (autoplay === true) {
-        setInterval(() => {
-            counter = counter < itemsPerSlide - 1 ? counter + 1 : 0;
-            document.querySelector(".dots .active").classList.remove("active");
-            document.querySelector(".dots li:nth-child(" + (counter + 1) + ")").classList.add("active");
-            slider.style.transform = `translateX(-${counter * items}px)`;
-        }, interval);
+    // resetInterval
+
+    const resetInterval = () => {
+        clearInterval(Interval);
+        Interval = autoplay ? setInterval(autoPlay, interval) : null;
     }
+
+
+    const autoPlay = () => {
+        counter = counter < itemsPerSlide - 1 ? counter + 1 : 0;
+        document.querySelector(".dots .active").classList.remove("active");
+        document.querySelector(".dots li:nth-child(" + (counter + 1) + ")").classList.add("active");
+        slider.style.transform = `translateX(-${counter * items}px)`;
+    }
+
+
+
+    let Interval = autoplay ? setInterval(autoPlay, interval) : null;
+
 }
