@@ -11,6 +11,8 @@ const hamdanSlider = (sliderOptions) => {
     navigations = sliderOptions.navigations || false;
     item = sliderOptions.item || 1;
     dots = sliderOptions.dots || false;
+    animation = sliderOptions.animation || false;
+    animationDuration = sliderOptions.animationDuration || false;
 
 
     let counter = 0;
@@ -19,6 +21,10 @@ const hamdanSlider = (sliderOptions) => {
 
     let items = slider.offsetWidth / item;
     let itemsPerSlide = slide.length / item;
+
+
+    // Adding Animation
+
 
 
     // Set the width of the slider
@@ -86,7 +92,7 @@ const hamdanSlider = (sliderOptions) => {
             counter = counter < itemsPerSlide - 1 ? counter + 1 : 0;
             document.querySelector(".dots .active").classList.remove("active");
             document.querySelector(".dots li:nth-child(" + (counter + 1) + ")").classList.add("active");
-            slider.style.transform = `translateX(-${counter * items}px)`;
+            slider.style.left = -slider.offsetWidth * counter + "px";
             resetInterval();
         });
 
@@ -97,7 +103,7 @@ const hamdanSlider = (sliderOptions) => {
             counter = counter > 0 ? counter - 1 : itemsPerSlide - 1;
             document.querySelector(".dots .active").classList.remove("active");
             document.querySelector(".dots li:nth-child(" + (counter + 1) + ")").classList.add("active");
-            slider.style.transform = `translateX(-${counter * items}px)`;
+            slider.style.left = -slider.offsetWidth * counter + "px";
             resetInterval();
         });
     }
@@ -125,7 +131,7 @@ const hamdanSlider = (sliderOptions) => {
         counter = counter < itemsPerSlide - 1 ? counter + 1 : 0;
         document.querySelector(".dots .active").classList.remove("active");
         document.querySelector(".dots li:nth-child(" + (counter + 1) + ")").classList.add("active");
-        slider.style.transform = `translateX(-${counter * items}px)`;
+        slider.style.left = -slider.offsetWidth * counter + "px";
     }
 
 

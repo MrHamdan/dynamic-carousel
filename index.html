@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Carousel</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
@@ -262,11 +263,13 @@
     <script src="script.js"></script>
     <script>
         hamdanSlider({
-            interval: 8000,
+            interval: 3000,
             autoplay: true,
             navigations: true,
-            item: 1,
+            item: 3,
             dots: true,
+            animation: 'fadeInRight',
+            animationDurations: '2s',
         })
     </script>
     <script src="https://kit.fontawesome.com/524a219c29.js" crossorigin="anonymous"></script>
