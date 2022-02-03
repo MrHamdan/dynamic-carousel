@@ -114,7 +114,7 @@ const hamdanSlider = (sliderOptions) => {
     // Autoplay
     if (autoplay === true) {
         setInterval(() => {
-            counter = counter < itemsPerSlide ? counter + 1 : 0;
+            counter = counter < itemsPerSlide - 1 ? counter + 1 : 0;
             document.querySelector(".dots .active").classList.remove("active");
             document.querySelector(".dots li:nth-child(" + (counter + 1) + ")").classList.add("active");
             slider.style.transform = `translateX(-${counter * items}px)`;
