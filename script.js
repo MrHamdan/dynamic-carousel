@@ -26,6 +26,8 @@ const hamdanSlider = (sliderOptions) => {
         singleSlide.style.minWidth = items + "px";
     });
 
+
+    // navigationDots Function
     const navigationDots = () => {
 
         const ul = document.createElement("ul");
@@ -59,7 +61,7 @@ const hamdanSlider = (sliderOptions) => {
 
 
 
-
+    // navigationArrows Function
     const navigationArrows = () => {
 
         // Create nav arrows and append to container as div
@@ -101,13 +103,10 @@ const hamdanSlider = (sliderOptions) => {
 
 
 
-
-
-
-
     if (dots) {
         navigationDots();
     }
+
 
     if (navigations) {
         navigationArrows();
