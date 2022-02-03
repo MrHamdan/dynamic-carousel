@@ -51,6 +51,9 @@ const hamdanSlider = (sliderOptions) => {
         const dotsClick = document.querySelectorAll(".dots li");
         const firstChild = document.querySelector(".dots li");
         firstChild.classList.add("active");
+
+
+
         //   Adding EventListener on Dots-----------
         dotsClick.forEach((dot, index) => {
             dot.addEventListener("click", () => {
