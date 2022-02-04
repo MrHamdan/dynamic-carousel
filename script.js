@@ -50,14 +50,14 @@ const hamdanSlider = (sliderOptions) => {
         }
         container.appendChild(ul);
 
-        const dotsClick = document.querySelectorAll(".dots li");
-        const firstChild = document.querySelector(".dots li");
-        firstChild.classList.add("active");
+        const indicatorParents = document.querySelectorAll(".dots li");
+        const indicators = document.querySelector(".dots li");
+        indicators.classList.add("active");
 
 
 
         //   Adding EventListener on Dots-----------
-        dotsClick.forEach((dot, index) => {
+        indicatorParents.forEach((dot, index) => {
             dot.addEventListener("click", () => {
                 counter = index;
                 document.querySelector(".dots .active").classList.remove("active");
