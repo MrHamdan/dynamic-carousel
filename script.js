@@ -28,9 +28,11 @@ const hamdanSlider = (sliderOptions) => {
     // Adding Animation
 
 
-
     // Set the width of the slider
     slide.forEach((singleSlide) => {
+        singleSlide.style.animation = animation;
+        singleSlide.style.animationDuration = interval + "ms";
+        singleSlide.style.animationIterationCount = "infinite";
         singleSlide.style.minWidth = items + "px";
     });
 
