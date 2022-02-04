@@ -115,6 +115,16 @@ const hamdanSlider = (sliderOptions) => {
 
 
 
+
+    const autoPlay = () => {
+        counter = counter < itemsPerSlide - 1 ? counter + 1 : 0;
+        document.querySelector(".dots .active").classList.remove("active");
+        document.querySelector(".dots li:nth-child(" + (counter + 1) + ")").classList.add("active");
+        slider.style.left = -slider.offsetWidth * counter + "px";
+    }
+
+
+
     if (dots) {
         navigationDots();
     }
@@ -130,15 +140,6 @@ const hamdanSlider = (sliderOptions) => {
         clearInterval(Interval);
         Interval = autoplay ? setInterval(autoPlay, interval) : null;
     }
-
-
-    const autoPlay = () => {
-        counter = counter < itemsPerSlide - 1 ? counter + 1 : 0;
-        document.querySelector(".dots .active").classList.remove("active");
-        document.querySelector(".dots li:nth-child(" + (counter + 1) + ")").classList.add("active");
-        slider.style.left = -slider.offsetWidth * counter + "px";
-    }
-
 
 
     let Interval = autoplay ? setInterval(autoPlay, interval) : null;
