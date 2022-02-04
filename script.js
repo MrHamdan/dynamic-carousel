@@ -16,16 +16,12 @@ const hamdanSlider = (sliderOptions) => {
     animation = sliderOptions.animation || false;
     animationDuration = sliderOptions.animationDuration || false;
 
-
+    // slider width and items
     let counter = 0;
-
-
-
     let items = slider.offsetWidth / item;
     let itemsPerSlide = slide.length / item;
 
 
-    // Adding Animation
 
 
     // Set the width of the slider
@@ -52,6 +48,7 @@ const hamdanSlider = (sliderOptions) => {
         }
         container.appendChild(ul);
 
+        // Indicators for the dots
         const indicatorParents = document.querySelectorAll(".dots li");
         const indicators = document.querySelector(".dots li");
         indicators.classList.add("active");
@@ -89,6 +86,8 @@ const hamdanSlider = (sliderOptions) => {
           `;
         container.appendChild(div);
 
+
+        // Arrows for the slider
         const nextArrow = document.querySelector(".arrow-right");
         const prevArrow = document.querySelector(".arrow-left");
 
@@ -117,14 +116,13 @@ const hamdanSlider = (sliderOptions) => {
 
 
 
-
+    // autoplay Function
     const autoPlay = () => {
         counter = counter < itemsPerSlide - 1 ? counter + 1 : 0;
         document.querySelector(".dots .active").classList.remove("active");
         document.querySelector(".dots li:nth-child(" + (counter + 1) + ")").classList.add("active");
         slider.style.left = -slider.offsetWidth * counter + "px";
     }
-
 
 
     if (dots) {
@@ -136,8 +134,8 @@ const hamdanSlider = (sliderOptions) => {
         navigationArrows();
     }
 
-    // resetInterval
 
+    // resetInterval Function
     const resetInterval = () => {
         clearInterval(Interval);
         Interval = autoplay ? setInterval(autoPlay, interval) : null;
